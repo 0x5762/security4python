@@ -78,7 +78,7 @@ def get_pkt(pkt):
         if Raw in pkt:
             load = pkt['Raw'].load
             try:
-                load = urllib.unquote(load).encode('utf-8')
+                load = urllib.unquote(unicode(load, 'utf-8'))
             except:
                 load = ''
                 
