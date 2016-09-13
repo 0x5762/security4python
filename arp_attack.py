@@ -72,7 +72,7 @@ def get_pkt(pkt):
             if o in path.lower():
                 return
         cookie = pkt['HTTP Request'].Cookie
-        cookie = cookie.encode('utf-8') if cookie else ''
+        cookie = cookie if cookie else ''
         info = '\nRequest url: [%s] %s%s\ncookie:%s' % (method, host , urllib.unquote(path), urllib.unquote(cookie))
         
         if Raw in pkt:
